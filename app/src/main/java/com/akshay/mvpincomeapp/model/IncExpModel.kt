@@ -12,9 +12,9 @@ class IncExpModel: IncExpPresenterAPI {
     var api : MainActivity? = null
     var db : SQLiteDatabase? = null
     constructor(view: IncExpView){
-        api = MainActivity()
+        api = view as MainActivity
         db = api!!.openOrCreateDatabase("incexp",Context.MODE_PRIVATE,null)
-        db!!.execSQL("create table if not exists incexp(_id integer primary key autoincrement, date_ varchar(50), money integer,desc_ varchar(500), type varchar(50))")
+        db!!.execSQL("create table if not exists incexp(_id integer primary key autoincrement, date_ varchar(50), money number,desc_ varchar(500), type varchar(50))")
 
     }
     override fun addInput(bean: IncExpBean) {

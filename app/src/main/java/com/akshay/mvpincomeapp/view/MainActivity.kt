@@ -11,6 +11,7 @@ import com.akshay.mvpincomeapp.beans.IncExpBean
 import com.akshay.mvpincomeapp.model.IncExpModel
 import com.akshay.mvpincomeapp.presenter.IncExpPresenterAPI
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity(),IncExpView {
     override fun addResponse(msg: String) {
@@ -26,14 +27,18 @@ class MainActivity : AppCompatActivity(),IncExpView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var cal= Calendar.getInstance()
+        cal.set(cal.get,)
+
         add.setOnClickListener{
             var api = IncExpModel(this@MainActivity)
-            var bean = IncExpBean(et1.text.toString().toInt(),et2.text.toString(),et3.text.toString(),sp1.selectedItem.toString())
+            var bean = IncExpBean(et1.text.toString(),et2.text.toString().toInt(),et3.text.toString(),sp1.selectedItem.toString())
             api.addInput(bean)
+            et1.setText(""); et2.setText(""); et3.setText("")
         }
 
         read.setOnClickListener {
-            var api = IncExpModel(this@MainActivity)
+            var api:IncExpPresenterAPI = IncExpModel(this@MainActivity)
             api.readInput(sp1.selectedItem.toString())
         }
 

@@ -3,6 +3,6 @@
 
     <string-array name="type">
         <item>Income</item>
-        <item>Expenses</item>
+        <item>Expense</item>
     </string-array>
 </resources>
