@@ -27,9 +27,6 @@ class MainActivity : AppCompatActivity(),IncExpView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var cal= Calendar.getInstance()
-        cal.set(cal.get,)
-
         add.setOnClickListener{
             var api = IncExpModel(this@MainActivity)
             var bean = IncExpBean(et1.text.toString(),et2.text.toString().toInt(),et3.text.toString(),sp1.selectedItem.toString())
