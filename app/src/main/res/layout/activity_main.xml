@@ -23,7 +23,8 @@
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/type"/>
+        android:entries="@array/type"
+        android:id="@+id/sp1"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,5 +42,9 @@
         android:text="Read Data"
         android:id="@+id/read"/>
     </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lview"></ListView>
 
 </LinearLayout>
